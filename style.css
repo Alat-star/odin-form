@@ -10,7 +10,6 @@ html {
 
 
 body {
-    position: relative;
     padding: 20px;
     margin-top: 10px;
     background: rgb(238,174,202);
@@ -18,8 +17,8 @@ body {
     font-size: 3vmin;
     font-family: sans-serif;
     display: grid;
-    grid-gap: 50px;
     justify-content: center;
+    /* align-content: stretch; */
     
 }
 
@@ -31,7 +30,6 @@ p {
 img {
     height: auto;
     max-width: 100%;
-    display: block;
 }
 
 
@@ -68,7 +66,7 @@ i{
     padding: 5px;
     background-image: url(images/images.jpeg);
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .form-div{
@@ -76,6 +74,7 @@ i{
     color: #fff;
     display: grid;
     grid-gap: 60px;
+    grid-template-rows: repeat(3, auto);
     justify-content: center;
     align-content: center;
 }
@@ -83,10 +82,8 @@ i{
 .logo {
     background: #ccc;
     border-radius: 25%;
-    position: absolute;
-    max-width: 80px;
-    top: 50px;
-    right: 310px;
+    justify-self: center;
+    max-width: 10vmin;
 }
 
 .submit {
@@ -145,97 +142,47 @@ i{
 
 
 @media screen and (max-width: 1000px) {
-    p {
-        padding: 0rem;
-        text-align: right;
-        }
-    
-    .logo {
-        max-width: 30px;
-        top: 33px;
-        right: 390px;
-    }
-}
-
-@media screen and (max-width: 900px) {
-    .logo {
-        max-width: 30px;
-        top: 33px;
-        right: 350px;
-    }
-}
-
-@media screen and (max-width: 800px) {
-
-    p{
-        padding-top: 1.6rem;
-    }
-
-    .logo {
-        max-width: 30px;
-        top: 33px;
-        right: 330px;
-    }
-
-    .form-img > img {
-        object-fit: contain;
-    }
-}
-
-@media screen and (max-width: 700px) {
-    p{
-        padding: 4rem 1rem 0 1rem;
-        text-align: center;
-        font-size: ;
-    }
-
-    form {
-        padding: 0rem 1rem 1rem 1rem;
-    }
-
-    .logo {
-        max-width: 30px;
-        top: 33px;
-        right: 170px;
-    }
 
     .form-img > img {
         object-fit: cover;
+        width: 100%;
+    }    
+
+   .form-div {
+       padding: 10px;
+   }
+}
+
+@media screen and (max-width: 700px) {
+
+    .container-div {
+        grid-template-columns: 1fr;
+    }
+
+    .form-img > img {
+        display: none;
+    }
+    .form-div{
+        background: none;
     }
 }
 
 @media screen and (max-width: 500px) {
-    
-
-    p {
-        padding: 1rem;
-        text-align: center;
-        }
 
     i {
         margin-left: -25px;
     }
 
-    form {
-        padding: 0rem 1rem 1rem 1rem;
-    }
-
-
-
-    .logo {
-        max-width: 30px;
-        top: 31px;
-    }
-
     .container-div {
         border-radius: 10px;
         padding: 3px;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
+
     }
 
 
     .form-img > img {
-        object-fit: cover;
+        display: none;
     }
 
 }
