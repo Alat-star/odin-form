@@ -18,7 +18,6 @@ body {
     font-family: sans-serif;
     display: grid;
     justify-content: center;
-    /* align-content: stretch; */
     
 }
 
@@ -30,18 +29,20 @@ p {
 img {
     height: auto;
     max-width: 100%;
+    display: block;
 }
-
 
 
 form {
     display: grid;
     grid-gap: 30px;
+    font-size: 3.25vmin;
 }
 
 form > div {
     display: grid;
     grid-gap: 10px;
+   
 }
 
 
@@ -137,7 +138,7 @@ i{
 .match,
 .email-error,
 .code {
-    font-size: 1.6vmin;
+    font-size: 2vmin;
 }
 
 
@@ -184,10 +185,5 @@ i{
     .form-img > img {
         display: none;
     }
-
-}
-
-@media screen and (max-width: 320px) {
-   
 
 }
